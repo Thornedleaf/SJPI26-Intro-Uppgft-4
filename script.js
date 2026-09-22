@@ -2,6 +2,7 @@ const input = document.getElementById('new-task');
 const button = document.querySelector('button');
 const list = document.querySelector('ul');
 const counter = document.getElementById('task-counter');
+const emptyMessage = document.getElementById('empty-message');
 const theList = Array.from(list.querySelectorAll('li'), (item) => item.textContent);
 let completedTasks = 0;
 
@@ -28,9 +29,11 @@ button.addEventListener('click', () => {
 	const text = input.value.trim();
 
 	if (text === '') {
+		emptyMessage.style.display = 'block';
 		return;
 	}
 
+	emptyMessage.style.display = 'none';
 	const item = document.createElement('li');
 	item.textContent = text;
 	list.appendChild(item);
