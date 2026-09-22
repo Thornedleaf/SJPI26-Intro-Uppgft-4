@@ -2,7 +2,7 @@ const input = document.getElementById('new-task');
 const button = document.querySelector('button');
 const list = document.querySelector('ul');
 const counter = document.getElementById('task-counter');
-const theList = Array.from(list.querySelectorAll('li'));
+const theList = Array.from(list.querySelectorAll('li'), (item) => item.textContent);
 let completedTasks = 0;
 
 
@@ -34,7 +34,7 @@ button.addEventListener('click', () => {
 	const item = document.createElement('li');
 	item.textContent = text;
 	list.appendChild(item);
-	theList.push(item);
+	theList.push(text);
 
 	input.value = '';
 });
