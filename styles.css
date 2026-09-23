@@ -2,3 +2,19 @@
 	color: gray;
 	text-decoration: line-through;
 }
+
+.remove-item {
+	margin-left: 0.5rem;
+	padding: 0 0.25rem;
+	border: 0;
+	background: transparent;
+	color: #b00020;
+	font-size: 1rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.remove-item:hover,
+.remove-item:focus-visible {
+	color: #750014;
+}

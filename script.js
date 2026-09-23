@@ -6,6 +6,17 @@ const emptyMessage = document.getElementById('empty-message');
 const theList = Array.from(list.querySelectorAll('li'), (item) => item.textContent);
 let completedTasks = 0;
 
+const addRemoveButton = (item) => {
+	const removeButton = document.createElement('button');
+	removeButton.className = 'remove-item';
+	removeButton.type = 'button';
+	removeButton.setAttribute('aria-label', 'Remove item');
+	removeButton.title = 'Remove item';
+	removeButton.textContent = '×';
+	item.appendChild(removeButton);
+};
+
+list.querySelectorAll('li').forEach(addRemoveButton);
 
 counter.textContent = `${completedTasks} completed tasks`;
 
@@ -13,6 +24,15 @@ list.addEventListener('click', (event) => {
 	const item = event.target.closest('li');
 
 	if (!item) {
+		return;
+	}
+
+	if (event.target.closest('.remove-item')) {
+		if (item.classList.contains('completed')) {
+			completedTasks --;
+		}
+		item.remove();
+		counter.textContent = `${completedTasks} completed tasks`;
 		return;
 	}
 
@@ -36,6 +56,7 @@ button.addEventListener('click', () => {
 	emptyMessage.style.display = 'none';
 	const item = document.createElement('li');
 	item.textContent = text;
+	addRemoveButton(item);
 	list.appendChild(item);
 	theList.push(text);
 
