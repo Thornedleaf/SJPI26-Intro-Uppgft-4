@@ -3,7 +3,10 @@ const button = document.querySelector('button');
 const list = document.querySelector('ul');
 const counter = document.getElementById('task-counter');
 const emptyMessage = document.getElementById('empty-message');
-const theList = Array.from(list.querySelectorAll('li'), (item) => item.textContent);
+const theList = Array.from(list.querySelectorAll('li'), (item) => ({
+	text: item.textContent.trim(),
+	completed: item.classList.contains('completed')
+}));
 let completedTasks = 0;
 
 const addRemoveButton = (item) => {
@@ -58,7 +61,10 @@ button.addEventListener('click', () => {
 	item.textContent = text;
 	addRemoveButton(item);
 	list.appendChild(item);
-	theList.push(text);
+	theList.push({
+		text,
+		completed: false
+	});
 
 	input.value = '';
 });
