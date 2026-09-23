@@ -15,7 +15,7 @@ const addRemoveButton = (item) => {
 	removeButton.type = 'button';
 	removeButton.setAttribute('aria-label', 'Remove item');
 	removeButton.title = 'Remove item';
-	removeButton.textContent = '×';
+	removeButton.textContent = '\u{1F5D1}\uFE0F';
 	item.appendChild(removeButton);
 };
 
