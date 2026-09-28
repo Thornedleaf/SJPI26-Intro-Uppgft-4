@@ -18,3 +18,7 @@
 .remove-item:focus-visible {
 	color: #750014;
 }
+
+.empty-message {
+	display: none
+}
