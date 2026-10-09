@@ -58,6 +58,7 @@ button.addEventListener('click', () => {
 
 	emptyMessage.style.display = 'none';
 	const item = document.createElement('li');
+	item.classList.add('fade-in');
 	item.textContent = text;
 	addRemoveButton(item);
 	list.appendChild(item);
