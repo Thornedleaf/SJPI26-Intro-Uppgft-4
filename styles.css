@@ -1,15 +1,18 @@
-.completed {
+.completed 
+	{
 	color: gray;
 	text-decoration: line-through;
-}
+	}
 
-.container li {
+.container li 
+	{
 	transition: color 500ms ease;
-}
+	}
 
-.container li.fade-in {
+.container li.fade-in 
+	{
 	animation: fade-in-from-bottom 500ms ease-out both;
-}
+	}
 
 @keyframes fade-in-from-bottom {
 	from {
@@ -101,3 +104,5 @@ body {
 	min-height: 100vh;
 	margin: 0;
 }
+
+
